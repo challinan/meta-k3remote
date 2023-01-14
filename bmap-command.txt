@@ -1,0 +1,1 @@
+sudo bmaptool copy --bmap /home/chris/yocto/rpi64-build/tmp/deploy/images/raspberrypi4-64/core-image-base-raspberrypi4-64.wic.bmap /home/chris/yocto/rpi64-build/tmp/deploy/images/raspberrypi4-64/core-image-base-raspberrypi4-64.wic.bz2 /dev/sdc
