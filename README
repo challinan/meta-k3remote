@@ -1,0 +1,8 @@
+This layer modifies Yocto/Poky's core-image-base
+to build a remote agent for controlling
+my Elecraft K3 transceiver.  See the layer readme
+for important information on correctly configuring
+this layer.
+
+challinan@gmail.com
+
