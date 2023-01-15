@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Copy to the build directory - a nice utility to view the final ROOTFS
 
 pushd ../rpi64-build/tmp/deploy/images/raspberrypi4-64
 mkdir temp

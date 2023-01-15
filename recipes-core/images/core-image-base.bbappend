@@ -8,8 +8,20 @@ IMAGE_FSTYPES:remove = "ext3"
 
 inherit extrausers
 EXTRA_USERS_PARAMS = "\
-    useradd --shell /bin/bash chris; \
+    useradd --shell /bin/bash ${USER_NAME}; \
 "
+
+process_shadow_pw() {
+    echo "Squash the password for our user account..."
+    sed -i -e "s|${USER_NAME}:\!|${USER_NAME}:|g" ${IMAGE_ROOTFS}/etc/shadow
+}
+
+ROOTFS_POSTPROCESS_COMMAND:append = " \
+    process_shadow_pw; \
+"
+#  sed -i 's/*/x/'
+#  ${IMAGE_ROOTFS}/etc/passwd ;
+
 
 RDEPENDS:qtbase += " \
     qtbase-mkspecs \

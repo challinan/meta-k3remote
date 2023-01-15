@@ -13,8 +13,3 @@ do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
 
-inherit extrausers
-
-EXTRA_USERS_PARAMS += "\
-    useradd --shell /bin/bash chris; \
-"
