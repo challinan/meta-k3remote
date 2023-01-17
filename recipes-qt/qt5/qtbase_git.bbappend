@@ -6,3 +6,4 @@ RDEPENDS:${PN} = "\
   qtbase-mkspecs \
   qtbase-plugins \
 "
+

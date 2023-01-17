@@ -4,5 +4,8 @@ my Elecraft K3 transceiver.  See the layer readme
 for important information on correctly configuring
 this layer.
 
+Once built, connect the remote SMB client as follows:
+sudo mount -t cifs -o username=chris,rw,uid=chris,gid=chris  //pi-k3remote/sandbox-pik3 /media/mnt/
+
 challinan@gmail.com
 

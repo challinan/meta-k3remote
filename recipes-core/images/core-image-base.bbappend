@@ -1,7 +1,11 @@
 # Our K3 Image
+
 #    This was in RDEPENDS
 #    packagegroup-core-standalone-sdk-target
 #    qtbase-dev
+
+# Add this package to the SDK
+TOOLCHAIN_HOST_TASK:append = " nativesdk-packagegroup-qt5-toolchain-host"
 
 # We don't need ext3 for Raspberry Pi
 IMAGE_FSTYPES:remove = "ext3"
@@ -36,9 +40,6 @@ RDEPENDS:qtbase += " \
     qttools-mkspecs \
     qttools-staticdev \
     qttools-tools \
-    qtquickcontrols2 \
-    qtquickcontrols2-dev \
-    qtquickcontrols2-mkspecs \
 "
 
 # tools-debug - adds debugging tools like gdb and strace.
@@ -46,11 +47,14 @@ EXTRA_IMAGE_FEATURES += "\
     tools-debug \
 "
 
+# gstreamer1.0-plugins-bad drags in rust, cargo and rust-llvm, making the build HUGE!
 IMAGE_INSTALL:append = " \
   packagegroup-core-ssh-openssh \
+  qtchooser \
   cmake \
   sudo \
   ntp \
+  tree \
   libpam \
   samba \
   rpi-eeprom \
@@ -59,7 +63,6 @@ IMAGE_INSTALL:append = " \
   gstreamer1.0 \
   gstreamer1.0-plugins-base \
   gstreamer1.0-plugins-good \
-  gstreamer1.0-plugins-bad \
   gstreamer1.0-rtsp-server \
 "
 
