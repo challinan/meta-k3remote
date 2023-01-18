@@ -1,5 +1,7 @@
 To set up build:
 
+This layer was developed on top of the kirkstone relese.
+
 In local.conf:
   Set LOCAL_SSID to the name of the local Wifi node
   Set PSK_PASSWD to the password of the local wifi

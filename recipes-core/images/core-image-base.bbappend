@@ -1,12 +1,5 @@
 # Our K3 Image
 
-#    This was in RDEPENDS
-#    packagegroup-core-standalone-sdk-target
-#    qtbase-dev
-
-# Add this package to the SDK
-TOOLCHAIN_HOST_TASK:append = " nativesdk-packagegroup-qt5-toolchain-host"
-
 # We don't need ext3 for Raspberry Pi
 IMAGE_FSTYPES:remove = "ext3"
 
@@ -23,9 +16,6 @@ process_shadow_pw() {
 ROOTFS_POSTPROCESS_COMMAND:append = " \
     process_shadow_pw; \
 "
-#  sed -i 's/*/x/'
-#  ${IMAGE_ROOTFS}/etc/passwd ;
-
 
 RDEPENDS:qtbase += " \
     qtbase-mkspecs \
@@ -54,6 +44,7 @@ IMAGE_INSTALL:append = " \
   cmake \
   sudo \
   ntp \
+  net-tools \
   tree \
   libpam \
   samba \

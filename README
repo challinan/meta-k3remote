@@ -4,8 +4,16 @@ my Elecraft K3 transceiver.  See the layer readme
 for important information on correctly configuring
 this layer.
 
-Once built, connect the remote SMB client as follows:
+Mount the remote SMB volume as follows:
 sudo mount -t cifs -o username=chris,rw,uid=chris,gid=chris  //pi-k3remote/sandbox-pik3 /media/mnt/
+
+Built against kirkstone and core-image-base.
+
+To build the SDK w/ QT support, build these targets in this order:
+$ bibake core-image-base
+$ bitbake meta-toolchain-qt5
+Do not use -c populate_sdk against your image to build the SDK
+See: https://embeddeduse.com/2020/06/19/qt-embedded-systems-2-build-qt-sdk-with-yocto/
 
 challinan@gmail.com
 
