@@ -1,3 +1,6 @@
 home is owned by root
 /home/chris is owned by root
-samba still doesn't have a password
+samba still doesn't have a user/password
+    * Must use sudo smbpasswd -a chris
+
+

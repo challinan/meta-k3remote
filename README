@@ -15,5 +15,8 @@ $ bitbake meta-toolchain-qt5
 Do not use -c populate_sdk against your image to build the SDK
 See: https://embeddeduse.com/2020/06/19/qt-embedded-systems-2-build-qt-sdk-with-yocto/
 
+Once this image is built, as it is currently configured, samba server must be manually configured using the following command on the target:
+$ sudo smbpasswd -a chris
+
 challinan@gmail.com
 

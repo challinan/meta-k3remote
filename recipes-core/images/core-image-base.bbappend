@@ -11,6 +11,10 @@ EXTRA_USERS_PARAMS = "\
 process_shadow_pw() {
     echo "Squash the password for our user account..."
     sed -i -e "s|${USER_NAME}:\!|${USER_NAME}:|g" ${IMAGE_ROOTFS}/etc/shadow
+    chown chris:chris ${IMAGE_ROOTFS}/home/chris
+    chmod 0750 ${IMAGE_ROOTFS}/home/chris
+    chown chris:chris ${IMAGE_ROOTFS}/home/chris/sandbox
+    chmod 0755 ${IMAGE_ROOTFS}/home/chris/sandbox
 }
 
 ROOTFS_POSTPROCESS_COMMAND:append = " \
